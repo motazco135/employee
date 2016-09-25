@@ -1,0 +1,35 @@
+<div class= "container">
+ <form *ngIf="!isRegisterd" class="ui form" #employeeForm="ngForm"  (ngSubmit)="addEmployee()">
+   <h2 class = "" ui dividing header> Add Employee </h2>
+    <div class=" field">
+      <label>* Name :</label>
+        <div class="filed">
+          <input type="text" [(ngModel)]="employeeDTO.name"  name="name"
+               #name="ngModel" placeholder="Employee Name" required>
+        </div>
+    </div>
+
+    <div class=" field">
+      <label>* Email  :</label>
+        <div class="filed">
+          <input type="text" [(ngModel)]="employeeDTO.email"  name="email"
+               #email="ngModel" placeholder="Email" required>
+        </div>
+    </div>
+
+    <div class=" field">
+      <label>* Mobile  :</label>
+        <div class="filed">
+          <input type="text" [(ngModel)]="employeeDTO.mobile" name="mobile"
+               #mobile="ngModel"  placeholder="Mobile" required>
+        </div>
+    </div>
+
+       <button type="submit" [disabled]="!employeeForm.form.valid" class="ui button">Add</button>
+    </form>
+
+   <div *ngIf="isRegisterd"  >
+      <h1>Employee Added Success with ID  {{createdEmployeeID}}</h1>
+   </div>
+
+</div>

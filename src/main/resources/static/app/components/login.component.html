@@ -1,0 +1,23 @@
+<div class= "container">
+<form class="ui form" #loginForm="ngForm"  (ngSubmit)="onlogin()">
+   <h2 class = " ui dividing header "> Login </h2>
+  <div class=" field">
+    <label>* User Name :</label>
+      <div class="filed">
+        <input type="text" [(ngModel)]="model.username"  name="username"
+             #username="ngModel" placeholder="User Name" required>
+      </div>
+  </div>
+
+  <div class=" field">
+    <label>* Password :</label>
+      <div class="filed">
+        <input type="password" [(ngModel)]="model.password"  name="password"
+             #password="ngModel" placeholder="Password" required>
+      </div>
+  </div>
+
+ <button type="submit" [disabled]="!loginForm.form.valid" class="ui button">Login</button>
+</form>
+
+</div>

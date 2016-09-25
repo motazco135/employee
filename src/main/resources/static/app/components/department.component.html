@@ -1,0 +1,34 @@
+<div class= "container">
+ <form *ngIf="!isRegisterd" class="ui form" #departmentForm="ngForm"  (ngSubmit)="addDepartment()">
+   <h2 class = "" ui dividing header> Add Department </h2>
+    <div class=" field">
+      <label>* Department Name :</label>
+        <div class="filed">
+          <input type="text" [(ngModel)]="department.departmentName"  name="departmentName"
+               #departmentName="ngModel" placeholder="Department Name" required>
+        </div>
+    </div>
+
+    <div class=" field">
+      <label>* Department Extention  :</label>
+        <div class="filed">
+          <input type="text" [(ngModel)]="department.departmentExt"  name="departmentExt"
+               #departmentExt="ngModel" placeholder="Department Extention" required>
+        </div>
+    </div>
+
+    <div class=" field">
+      <label>* Department Room Number  :</label>
+        <div class="filed">
+          <input type="text" [(ngModel)]="department.departmentRoomNum" name="departmentRoomNum"
+               #departmentRoomNum="ngModel"  placeholder="Department Room Number" required>
+        </div>
+    </div>
+       <button type="submit" [disabled]="!departmentForm.form.valid" class="ui button">Add</button>
+    </form>
+
+   <div *ngIf="isRegisterd"  >
+      <h1>Add Department Success!</h1>
+   </div>
+
+</div>
